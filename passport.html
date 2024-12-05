@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passport Service</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #003580;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  padding: 2rem;
+}
+
+form {
+  margin-top: 1rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #003580;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #002a60;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f1f1f1;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Passport Service Portal</h1>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Welcome to Passport Services</h2>
+      <p>Apply for new passports, renewals, or check your application status.</p>
+    </section>
+
+    <section id="apply">
+      <h2>Apply for Passport</h2>
+      <form id="passport-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" required>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="address">Address:</label>
+        <textarea id="address" rows="4" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section id="status">
+      <h2>Check Application Status</h2>
+      <form id="status-checker">
+        <label for="application-id">Application ID:</label>
+        <input type="text" id="application-id" required>
+        <button type="submit">Check Status</button>
+      </form>
+      <div id="status-result"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Passport Service Portal</p>
+  </footer>
+  <script src="js/scripts.js">
+    document.getElementById("passport-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  alert("Application Submitted Successfully!");
+});
+
+document.getElementById("status-checker").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const applicationId = document.getElementById("application-id").value;
+  const statusResult = document.getElementById("status-result");
+  // Simulate a status check
+  if (applicationId === "12345") {
+    statusResult.textContent = "Your application is under process.";
+  } else {
+    statusResult.textContent = "Application ID not found.";
+  }
+});
+
+  </script>
+</body>
+</html>

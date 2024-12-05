@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Transit Trip Planner</title>
+    <link rel="stylesheet" href="shorttrip.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places" defer></script>
+    <script src="shorttrip.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Air Transit Trip Planner</h1>
+        <p>Your Personalized Short-Trip Guide</p>
+    </header>
+
+    <main>
+        <!-- Main Page -->
+        <section id="main-page">
+            <div class="container">
+                <h2>Plan Your Transit Trip</h2>
+                <div class="input-group">
+                    <label for="transit-hours">Transit Hours</label>
+                    <input type="number" id="transit-hours" placeholder="Enter hours" required>
+                </div>
+                <div class="input-group">
+                    <label for="departure-time">Departure Time</label>
+                    <input type="time" id="departure-time" required>
+                </div>
+                <button onclick="planTrip()">Plan My Trip</button>
+            </div>
+        </section>
+
+        <!-- Tourism Places -->
+        <section id="tourism-places" class="hidden">
+            <h2>Nearby Tourism Places</h2>
+            <div id="places-list"></div>
+            <button class="back-btn" onclick="backToMain()">Back</button>
+        </section>
+
+        <!-- GPS Navigation -->
+        <section id="gps-navigation" class="hidden">
+            <h2>GPS Navigation</h2>
+            <div id="map"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Air Transit Trip Planner. Crafted for you.</p>
+    </footer>
+</body>
+</html>

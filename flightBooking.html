@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <link rel="stylesheet" href="flightBooking.css">
+</head>
+<body>
+    <header>
+        <h1>FlyHigh Airlines</h1>
+    </header>
+
+    <section id="booking">
+        <h2>Book Your Flight</h2>
+        <form id="flight-form">
+            <label for="from">From:</label>
+            <select id="from" name="from" required>
+                <option value="" disabled selected>Select your departure airport</option>
+                <option value="JFK">New York (JFK)</option>
+                <option value="LAX">Los Angeles (LAX)</option>
+                <option value="ORD">Chicago (ORD)</option>
+                <option value="ATL">Atlanta (ATL)</option>
+                <option value="LHR">London Heathrow (LHR)</option>
+            </select>
+
+            <label for="to">To:</label>
+            <select id="to" name="to" required>
+                <option value="" disabled selected>Select your destination airport</option>
+                <option value="JFK">New York (JFK)</option>
+                <option value="LAX">Los Angeles (LAX)</option>
+                <option value="ORD">Chicago (ORD)</option>
+                <option value="ATL">Atlanta (ATL)</option>
+                <option value="LHR">London Heathrow (LHR)</option>
+            </select>
+
+            <label for="departure-date">Departure Date:</label>
+            <input type="date" id="departure-date" name="departure-date" required>
+
+            <label for="return-date">Return Date:</label>
+            <input type="date" id="return-date" name="return-date">
+
+            <button type="submit">Search Flights</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FlyHigh Airlines. All rights reserved.</p>
+    </footer>
+
+    <script src="flightBooking.js"></script>
+</body>
+</html>

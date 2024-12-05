@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domestic Trip Packages</title>
+  <style>
+    /* General Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      margin: 0.5em 0;
+    }
+
+    /* Header Section */
+    .header {
+      background: linear-gradient(to bottom right, #4caf50, #2e7d32);
+      color: white;
+      text-align: center;
+      padding: 4em 1em;
+    }
+    .header h1 {
+      font-size: 3em;
+    }
+    .header p {
+      font-size: 1.2em;
+      margin-top: 1em;
+    }
+    .header button {
+      margin-top: 2em;
+      padding: 0.8em 1.5em;
+      background: #ffeb3b;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .header button:hover {
+      background: #fbc02d;
+    }
+
+    /* Packages Section */
+    .packages {
+      padding: 2em 1em;
+      text-align: center;
+    }
+    .packages h2 {
+      margin-bottom: 1em;
+      color: #444;
+    }
+    .package-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2em;
+    }
+    .package-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .package-card:hover {
+      transform: translateY(-10px);
+    }
+    .package-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .package-card h3 {
+      padding: 0.5em;
+      color: #4caf50;
+    }
+    .package-card p {
+      padding: 0 1em 1em;
+      color: #666;
+    }
+    .package-card button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.8em;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 0 0 10px 10px;
+      font-size: 1em;
+    }
+    .package-card button:hover {
+      background: #388e3c;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 2em 1em;
+      background: #f4f4f4;
+      text-align: center;
+    }
+    .contact h2 {
+      margin-bottom: 1em;
+      color: #444;
+    }
+    .contact form {
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .contact form label {
+      display: block;
+      margin: 0.5em 0 0.2em;
+    }
+    .contact form input, 
+    .contact form textarea {
+      width: 100%;
+      padding: 0.8em;
+      margin-bottom: 1em;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .contact form button {
+      width: 100%;
+      padding: 0.8em;
+      background: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .contact form button:hover {
+      background: #388e3c;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Discover Amazing Domestic Destinations</h1>
+    <p>Explore our top domestic trip packages and enjoy a wonderful experience!</p>
+    <button onclick="alert('Scroll down to explore packages!')">View Packages</button>
+  </header>
+
+  <section class="packages">
+    <h2>Popular Packages</h2>
+    <div class="package-grid">
+      <div class="package-card">
+        <img src="https://via.placeholder.com/300x200" alt="Goa">
+        <h3>Goa Beach Escape</h3>
+        <p>Soak up the sun and enjoy vibrant nightlife in Goa. 4-day package includes flights and accommodation.</p>
+        <button onclick="alert('Goa Beach Escape Selected!')">Book Now</button>
+      </div>
+      <div class="package-card">
+        <img src="https://via.placeholder.com/300x200" alt="Kerala">
+        <h3>Kerala Backwaters</h3>
+        <p>Relax in the serene backwaters of Kerala with a 5-day houseboat package.</p>
+        <button onclick="alert('Kerala Backwaters Selected!')">Book Now</button>
+      </div>
+      <div class="package-card">
+        <img src="https://via.placeholder.com/300x200" alt="Rajasthan">
+        <h3>Rajasthan Heritage</h3>
+        <p>Experience the rich culture and royal palaces of Rajasthan in a 6-day guided tour.</p>
+        <button onclick="alert('Rajasthan Heritage Selected!')">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <label for="message">Message:</label>
+      <textarea id="message" rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Domestic Trip Packages. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      alert(`Thank you, ${name}! We'll get back to you at ${email}.`);
+    });
+  </script>
+</body>
+</html>

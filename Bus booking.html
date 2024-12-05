@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f7f7f7;
+}
+
+/* Header Section */
+.header {
+    background: #008cba;
+    padding: 20px 0;
+    color: #fff;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header .nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.header .nav a:hover {
+    color: #ffdd00;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://gos3.ibcdn.com/img-1713770716.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* Search Section */
+.search {
+    background: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.search h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.search-form input, .search-form button {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-form button {
+    background: #008cba;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-form button:hover {
+    background: #005f87;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Find and Book Your Bus Easily</h1>
+            <p>Comfortable and Affordable Journeys Await You</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search" id="search">
+        <div class="container">
+            <h2>Search for Buses</h2>
+            <form class="search-form">
+                <label for="from">From:</label>
+                <select id="from" required>
+                    <option value="" disabled selected>Select Origin</option>
+                    <option value="new-york">New York</option>
+                    <option value="los-angeles">Los Angeles</option>
+                    <option value="chicago">Chicago</option>
+                    <option value="houston">Houston</option>
+                    <option value="miami">Miami</option>
+                </select>
+    
+                <label for="to">To:</label>
+                <select id="to" required>
+                    <option value="" disabled selected>Select Destination</option>
+                    <option value="new-york">New York</option>
+                    <option value="los-angeles">Los Angeles</option>
+                    <option value="chicago">Chicago</option>
+                    <option value="houston">Houston</option>
+                    <option value="miami">Miami</option>
+                </select>
+    
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+    
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 BusBooking. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js">
+        // JavaScript for interactive search
+document.querySelector('.search-form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent form submission
+    const from = document.getElementById('from').value;
+    const to = document.getElementById('to').value;
+    const date = document.getElementById('date').value;
+
+    if (from && to && date) {
+        alert(`Searching buses from ${from} to ${to} on ${date}`);
+    } else {
+        alert('Please fill in all fields!');
+    }
+});
+
+    </script>
+</body>
+</html>
